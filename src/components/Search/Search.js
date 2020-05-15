@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 25px;
-  background-color: dodgerblue;
+  background-color: ${({ theme }) => theme?.colors?.blue};
   margin-bottom: 10px;
 `;
 

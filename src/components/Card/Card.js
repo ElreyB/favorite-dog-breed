@@ -16,26 +16,24 @@ const Button = styled.button`
   font-size: 16px;
 `;
 
-const ImageWrapper = styled.div`
-  margin: auto;
+const Image = styled.div`
+  width: 300px;
+  height: 300px;
   margin-bottom: 10px;
-  width: 60%;
-  border: 3px solid black;
-  padding: 10px;
+  background-image: url(${({ image }) => image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
-const Img = styled.img`
-  width: 100%;
-`;
+const Name = styled.h2``;
 
-export default function Card({ breed, onClick, message }) {
+export default function Card({ breed, onClick, message, imageSize }) {
   const { name, image } = breed;
   return (
     <Wrapper>
-      <h2>{upperCaseName(name)}</h2>
-      <ImageWrapper>
-        <Img src={image} alt={name} />
-      </ImageWrapper>
+      <Name>{upperCaseName(name)}</Name>
+      <Image image={image} size={imageSize} />
       <Button type="button" onClick={() => onClick({ name, image })}>
         {message}
       </Button>
@@ -47,4 +45,9 @@ Card.propTypes = {
   breed: object.isRequired,
   onClick: func.isRequired,
   message: string.isRequired,
+  imageSize: string,
+};
+
+Card.defaultProps = {
+  imageSize: "med",
 };
