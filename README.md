@@ -1,5 +1,8 @@
 ## Favorite Dog Breeds
 
+<img width="1535" alt="Screen Shot 2020-05-15 at 12 42 08 PM" src="https://user-images.githubusercontent.com/20192033/82091257-e3952d80-96ab-11ea-862f-fe889bd0d2d6.png">
+
+
 ### Description
 
 _Small app to select and save your favorite breed of dog_
