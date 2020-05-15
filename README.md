@@ -1,4 +1,7 @@
 ## [Favorite Dog Breeds](https://elreyb.github.io/favorite-dog-breed/)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <img width="1535" alt="Screen Shot 2020-05-15 at 12 42 08 PM" src="https://user-images.githubusercontent.com/20192033/82091257-e3952d80-96ab-11ea-862f-fe889bd0d2d6.png">
 
@@ -40,3 +43,22 @@ _NOTE: You can not add a dog breed that is already in your list_
 - Add test for component(React Testing Library)
 - Add loading indicator
 - Size images when they are in the favorites list
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://elreyb.github.io/"><img src="https://avatars1.githubusercontent.com/u/20192033?v=4" width="100px;" alt=""/><br /><sub><b>Elrey C. Belmonti</b></sub></a><br /><a href="https://github.com/ElreyB/favorite-dog-breed/commits?author=ElreyB" title="Code">💻</a> <a href="https://github.com/ElreyB/favorite-dog-breed/commits?author=ElreyB" title="Documentation">📖</a> <a href="#design-ElreyB" title="Design">🎨</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
