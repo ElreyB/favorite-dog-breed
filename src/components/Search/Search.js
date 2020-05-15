@@ -42,7 +42,7 @@ export default function Search({ query, onChange, breeds, randomBreed }) {
           Select a breed and add it to your favorites list
         </Label>
 
-        <Select id="breeds" onChange={onChange}>
+        <Select id="breeds" onChange={onChange} value={query}>
           <option value="">Select a Breed</option>
           {breeds?.map((breed, index) => (
             <option value={breed} key={index}>
