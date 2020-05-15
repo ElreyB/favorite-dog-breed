@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/macro";
 import { object, string, func, number } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
+import Loading from "../Loading";
+import useImageStatus from "../../utils/useImageStatus";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +21,7 @@ const Button = styled.button`
 `;
 
 const Image = styled.div`
+  max-width: 100%;
   width: ${({ size }) => `${size}px`};
   height: ${({ size }) => `${size}px`};
   margin-bottom: 10px;
@@ -32,6 +35,8 @@ const Name = styled.h2``;
 
 export default function Card({ breed, onClick, message, imageSize, color }) {
   const { name, image } = breed;
+  const loaded = useImageStatus(image);
+  if (loaded === "loading") return <Loading />;
   return (
     <Wrapper>
       <Name>{upperCaseName(name)}</Name>

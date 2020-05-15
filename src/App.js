@@ -36,9 +36,11 @@ function App() {
 
   const handleOnChange = (e) => {
     const breedName = e.target.value;
-    API.getBreed(breedName).then(({ data }) => {
-      setQuery({ name: breedName, image: data.message });
-    });
+    API.getBreed(breedName)
+      .then(({ data }) => {
+        setQuery({ name: breedName, image: data.message });
+      })
+      .catch(console.error);
   };
 
   const addToFavs = (breed) => {
@@ -55,11 +57,12 @@ function App() {
   const randomBreed = () => {
     const randomIndex = getRandomIndex(0, breeds.length - 1);
     const breedName = breeds[randomIndex];
-    API.getBreed(breedName).then(({ data }) => {
-      setQuery({ name: breedName, image: data.message });
-    });
+    API.getBreed(breedName)
+      .then(({ data }) => {
+        setQuery({ name: breedName, image: data.message });
+      })
+      .catch(console.error);
   };
-
   return (
     <div>
       <Search
