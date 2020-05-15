@@ -26,7 +26,9 @@ function App() {
   };
 
   const addToFavs = (breed) => {
-    setFavBreeds([...favBreeds, breed]);
+    if (favBreeds.filter(({ name }) => name === breed.name).length !== 1) {
+      setFavBreeds([...favBreeds, breed]);
+    }
   };
 
   const removeFromFavs = (breed) => {
@@ -42,7 +44,6 @@ function App() {
     });
   };
 
-  console.log(query, breeds);
   return (
     <div>
       <Search
