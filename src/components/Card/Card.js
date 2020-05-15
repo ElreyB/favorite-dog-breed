@@ -1,13 +1,15 @@
 import React from "react";
 import upperCaseName from "../../utils/upperCaseName";
 
-export default function Card({ breed }) {
+export default function Card({ breed, onClick }) {
   const { name, image } = breed;
-  console.log(name);
   return (
     <div>
-      <h2>{name ?? upperCaseName(name)}</h2>
+      <h2>{upperCaseName(name)}</h2>
       <img src={image} alt={name} />
+      <button type="button" onClick={() => onClick({ name, image })}>
+        Add Breed to Favorties
+      </button>
     </div>
   );
 }
