@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import API from "./utils/API";
+import Card from "./components/Card";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -22,6 +23,7 @@ function App() {
   return (
     <div>
       <Search onChange={handleOnChange} query={query} breeds={breeds} />
+      <Card />
     </div>
   );
 }
