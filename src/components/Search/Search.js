@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 25px;
   background-color: ${({ theme }) => theme?.colors?.blue};
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 `;
 
 const Label = styled.label`
