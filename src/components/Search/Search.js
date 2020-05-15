@@ -1,15 +1,16 @@
 import React from "react";
+import upperCaseName from "../../utils/upperCaseName";
 
 export default function Search({ query, onChange, onSubmit, breeds }) {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <label for="breeds">Select Breed</label>
+        <label forhtml="breeds">Select Breed</label>
 
         <select id="breeds" onChange={onChange}>
           {breeds?.map((breed, index) => (
             <option value={breed} key={index}>
-              {breed[0].toUpperCase() + breed.slice(1)}
+              {upperCaseName(breed)}
             </option>
           ))}
         </select>

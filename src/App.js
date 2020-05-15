@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <Search onChange={handleOnChange} query={query.name} breeds={breeds} />
-      <Card data={query} />
+      <Card breed={query} />
     </div>
   );
 }
