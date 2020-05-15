@@ -1,4 +1,4 @@
-## Favorite Breed
+## Favorite Dog Breeds
 
 ### Description
 
