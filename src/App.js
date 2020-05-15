@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import "./App.css";
 import Search from "./components/Search";
 import API from "./utils/API";
 import getRandomIndex from "./utils/getRandomIndex";
 import Card from "./components/Card";
 import Favorites from "./components/Favorites";
+
+const Section = styled.section`
+  display: flex;
+  justify-content: space-around;
+`;
 
 function App() {
   const [query, setQuery] = useState({ name: "", image: "" });
@@ -52,21 +58,22 @@ function App() {
         breeds={breeds}
         randomBreed={randomBreed}
       />
+      <Section>
+        {query.name && query.image && (
+          <Card
+            breed={query}
+            onChange={addToFavs}
+            onClick={addToFavs}
+            message="Add Breed to Favorites"
+          />
+        )}
 
-      {query.name && query.image && (
-        <Card
-          breed={query}
-          onChange={addToFavs}
-          onClick={addToFavs}
-          message="Add Breed to Favorites"
-        />
-      )}
-
-      {favBreeds.length > 0 ? (
-        <Favorites favBreeds={favBreeds} onClick={removeFromFavs} />
-      ) : (
-        "You have no favorties at this time."
-      )}
+        {favBreeds.length > 0 ? (
+          <Favorites favBreeds={favBreeds} onClick={removeFromFavs} />
+        ) : (
+          "You have no favorties at this time."
+        )}
+      </Section>
     </div>
   );
 }
