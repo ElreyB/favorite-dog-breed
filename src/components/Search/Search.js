@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { string, func, arrayOf } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
 
@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 25px;
   background-color: dodgerblue;
+  margin-bottom: 10px;
 `;
 
 const Label = styled.label`

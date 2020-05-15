@@ -24,13 +24,17 @@ const ImageWrapper = styled.div`
   padding: 10px;
 `;
 
+const Img = styled.img`
+  width: 100%;
+`;
+
 export default function Card({ breed, onClick, message }) {
   const { name, image } = breed;
   return (
     <Wrapper>
       <h2>{upperCaseName(name)}</h2>
       <ImageWrapper>
-        <img src={image} alt={name} style={{ width: "100%" }} />
+        <Img src={image} alt={name} />
       </ImageWrapper>
       <Button type="button" onClick={() => onClick({ name, image })}>
         {message}

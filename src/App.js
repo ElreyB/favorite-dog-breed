@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import "./App.css";
 import Search from "./components/Search";
 import API from "./utils/API";
@@ -10,6 +10,15 @@ import Favorites from "./components/Favorites";
 const Section = styled.section`
   display: flex;
   justify-content: space-around;
+`;
+
+const Panel = styled.div`
+  width: 40%;
+  height: 100vh;
+`;
+
+const P = styled.p`
+  text-align: center;
 `;
 
 function App() {
@@ -59,20 +68,23 @@ function App() {
         randomBreed={randomBreed}
       />
       <Section>
-        {query.name && query.image && (
-          <Card
-            breed={query}
-            onChange={addToFavs}
-            onClick={addToFavs}
-            message="Add Breed to Favorites"
-          />
-        )}
-
-        {favBreeds.length > 0 ? (
-          <Favorites favBreeds={favBreeds} onClick={removeFromFavs} />
-        ) : (
-          "You have no favorties at this time."
-        )}
+        <Panel>
+          {query.name && query.image && (
+            <Card
+              breed={query}
+              onChange={addToFavs}
+              onClick={addToFavs}
+              message="Add Breed to Favorites"
+            />
+          )}
+        </Panel>
+        <Panel>
+          {favBreeds.length > 0 ? (
+            <Favorites favBreeds={favBreeds} onClick={removeFromFavs} />
+          ) : (
+            <P>You have no favorties at this time.</P>
+          )}
+        </Panel>
       </Section>
     </div>
   );
