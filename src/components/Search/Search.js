@@ -1,10 +1,16 @@
 import React from "react";
 import upperCaseName from "../../utils/upperCaseName";
 
-export default function Search({ query, onChange, onSubmit, breeds }) {
+export default function Search({
+  query,
+  onChange,
+  onSubmit,
+  breeds,
+  randomBreed,
+}) {
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form>
         <label forhtml="breeds">Select Breed</label>
 
         <select id="breeds" onChange={onChange}>
@@ -14,8 +20,10 @@ export default function Search({ query, onChange, onSubmit, breeds }) {
             </option>
           ))}
         </select>
-        <button type="submit">Search</button>
       </form>
+      <button type="button" onClick={randomBreed}>
+        Pick Random Breed
+      </button>
     </div>
   );
 }

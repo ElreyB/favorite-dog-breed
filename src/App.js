@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import API from "./utils/API";
+import getRandomIndex from "./utils/getRandomIndex";
 import Card from "./components/Card";
 import Favorites from "./components/Favorites";
 
@@ -18,24 +19,38 @@ function App() {
   }, []);
 
   const handleOnChange = (e) => {
-    const breadName = e.target.value;
-    API.getBreed(breadName).then(({ data }) => {
-      setQuery({ name: breadName, image: data.message });
+    const breedName = e.target.value;
+    API.getBreed(breedName).then(({ data }) => {
+      setQuery({ name: breedName, image: data.message });
     });
   };
 
   const addToFavs = (breed) => {
     setFavBreeds([...favBreeds, breed]);
   };
+
   const removeFromFavs = (breed) => {
     const updateFavs = favBreeds.filter(({ name }) => name !== breed.name);
     setFavBreeds(updateFavs);
   };
 
+  const randomBreed = () => {
+    const randomIndex = getRandomIndex(0, breeds.length - 1);
+    const breedName = breeds[randomIndex];
+    API.getBreed(breedName).then(({ data }) => {
+      setQuery({ name: breedName, image: data.message });
+    });
+  };
+
   console.log(query, breeds);
   return (
     <div>
-      <Search onChange={handleOnChange} query={query.name} breeds={breeds} />
+      <Search
+        onChange={handleOnChange}
+        query={query.name}
+        breeds={breeds}
+        randomBreed={randomBreed}
+      />
 
       {query.name && query.image && (
         <Card
