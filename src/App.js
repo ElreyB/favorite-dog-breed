@@ -27,6 +27,10 @@ function App() {
   const addToFavs = (breed) => {
     setFavBreeds([...favBreeds, breed]);
   };
+  const removeFromFavs = (breed) => {
+    const updateFavs = favBreeds.filter(({ name }) => name !== breed.name);
+    setFavBreeds(updateFavs);
+  };
 
   console.log(query, breeds);
   return (
@@ -34,11 +38,16 @@ function App() {
       <Search onChange={handleOnChange} query={query.name} breeds={breeds} />
 
       {query.name && query.image && (
-        <Card breed={query} onChange={addToFavs} onClick={addToFavs} />
+        <Card
+          breed={query}
+          onChange={addToFavs}
+          onClick={addToFavs}
+          message="Add Breed to Favorites"
+        />
       )}
 
       {favBreeds.length > 0 ? (
-        <Favorites favBreeds={favBreeds} />
+        <Favorites favBreeds={favBreeds} onClick={removeFromFavs} />
       ) : (
         "You have no favorties at this time."
       )}
