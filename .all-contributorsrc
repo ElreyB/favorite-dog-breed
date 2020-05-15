@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ElreyB",
+      "name": "Elrey C. Belmonti",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20192033?v=4",
+      "profile": "https://elreyb.github.io/",
+      "contributions": [
+        "code",
+        "doc",
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "favorite-dog-breed",
+  "projectOwner": "ElreyB",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
