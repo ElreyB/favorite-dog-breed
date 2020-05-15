@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   padding: 10px 5px;
   border: 2px solid;
+  background-color: ${({ theme, bgColor }) => theme?.colors?.[bgColor]};
 `;
 
 const Image = styled.div`
@@ -29,13 +30,17 @@ const Image = styled.div`
 
 const Name = styled.h2``;
 
-export default function Card({ breed, onClick, message, imageSize }) {
+export default function Card({ breed, onClick, message, imageSize, color }) {
   const { name, image } = breed;
   return (
     <Wrapper>
       <Name>{upperCaseName(name)}</Name>
       <Image image={image} size={imageSize} />
-      <Button type="button" onClick={() => onClick({ name, image })}>
+      <Button
+        type="button"
+        onClick={() => onClick({ name, image })}
+        bgColor={color}
+      >
         {message}
       </Button>
     </Wrapper>

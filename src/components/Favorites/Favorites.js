@@ -19,6 +19,7 @@ export default function Favorites({ favBreeds, onClick }) {
           message="Remove breed"
           onClick={onClick}
           imageSize={150}
+          color="red"
         />
       ))}
     </Wrapper>

@@ -19,6 +19,7 @@ const Panel = styled.div`
 
 const P = styled.p`
   text-align: center;
+  color: white;
 `;
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
               onChange={addToFavs}
               onClick={addToFavs}
               message="Add Breed to Favorites"
+              color="green"
             />
           )}
         </Panel>
