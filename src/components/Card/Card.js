@@ -1,4 +1,5 @@
 import React from "react";
+import { object, string, func } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
 
 export default function Card({ breed, onClick, message }) {
@@ -13,3 +14,9 @@ export default function Card({ breed, onClick, message }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  breed: object.isRequired,
+  onClick: func.isRequired,
+  message: string.isRequired,
+};

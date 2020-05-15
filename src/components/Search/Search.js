@@ -1,13 +1,8 @@
 import React from "react";
+import { string, func, arrayOf } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
 
-export default function Search({
-  query,
-  onChange,
-  onSubmit,
-  breeds,
-  randomBreed,
-}) {
+export default function Search({ query, onChange, breeds, randomBreed }) {
   return (
     <div>
       <form>
@@ -27,3 +22,10 @@ export default function Search({
     </div>
   );
 }
+
+Search.propTypes = {
+  query: string.isRequired,
+  onChange: func.isRequired,
+  breeds: arrayOf(string).isRequired,
+  randomBreed: func.isRequired,
+};

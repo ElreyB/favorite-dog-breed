@@ -1,4 +1,5 @@
 import React from "react";
+import { arrayOf, func, object } from "prop-types";
 import Card from "../Card";
 
 export default function Favorites({ favBreeds, onClick }) {
@@ -15,3 +16,8 @@ export default function Favorites({ favBreeds, onClick }) {
     </div>
   );
 }
+
+Favorites.propTypes = {
+  favBreeds: arrayOf(object).isRequired,
+  onClick: func.isRequired,
+};
