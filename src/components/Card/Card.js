@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { object, string, func, number } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
 
@@ -8,12 +8,13 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: ${({ theme }) => theme?.colors?.blue};
+  padding: 10px;
 `;
 
 const Button = styled.button`
   padding: 10px 5px;
   border: 2px solid;
-  font-size: 16px;
 `;
 
 const Image = styled.div`
