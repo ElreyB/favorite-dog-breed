@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { object, string, func } from "prop-types";
+import { object, string, func, number } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
 
 const Wrapper = styled.div`
@@ -17,8 +17,8 @@ const Button = styled.button`
 `;
 
 const Image = styled.div`
-  width: 300px;
-  height: 300px;
+  width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
   margin-bottom: 10px;
   background-image: url(${({ image }) => image});
   background-position: center;
@@ -45,9 +45,9 @@ Card.propTypes = {
   breed: object.isRequired,
   onClick: func.isRequired,
   message: string.isRequired,
-  imageSize: string,
+  imageSize: number,
 };
 
 Card.defaultProps = {
-  imageSize: "med",
+  imageSize: 300,
 };
