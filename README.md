@@ -22,3 +22,9 @@ _NOTE: You can not add a dog breed that is already in your list_
 - In the main folder run the command
   - npm install or yarn
   - npm run start or yarn start
+
+### Future Improvments
+
+- Add test for component(React Testing Library)
+- Add loading indicator
+- Size images when they are in the favorites list
