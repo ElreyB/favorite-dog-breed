@@ -5,7 +5,7 @@ import API from "./utils/API";
 import Card from "./components/Card";
 
 function App() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState({ name: "", image: "" });
   const [breeds, setBreeds] = useState([]);
 
   useEffect(() => {
@@ -16,14 +16,17 @@ function App() {
   }, []);
 
   const handleOnChange = (e) => {
-    setQuery(e.target.value);
+    const breadName = e.target.value;
+    API.getBreed(breadName).then(({ data }) => {
+      setQuery({ name: breadName, image: data.message });
+    });
   };
 
   console.log(query, breeds);
   return (
     <div>
-      <Search onChange={handleOnChange} query={query} breeds={breeds} />
-      <Card />
+      <Search onChange={handleOnChange} query={query.name} breeds={breeds} />
+      <Card data={query} />
     </div>
   );
 }
