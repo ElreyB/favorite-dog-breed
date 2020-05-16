@@ -15,6 +15,7 @@ const Section = styled.section`
 const Panel = styled.div`
   width: 40%;
   height: 100vh;
+  /* add media query */
 `;
 
 const P = styled.p`
