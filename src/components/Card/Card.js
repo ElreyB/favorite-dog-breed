@@ -12,6 +12,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: ${({ theme }) => theme?.colors?.blue};
   padding: 10px;
+  min-width: 25%;
+  margin: 20px;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
@@ -36,7 +42,7 @@ const Name = styled.h2``;
 export default function Card({ breed, onClick, message, imageSize, color }) {
   const { name, image } = breed;
   const loaded = useImageStatus(image);
-  if (loaded === "loading") return <Loading />;
+  if (loaded === "loading") return <Loading size={400} />;
   return (
     <Wrapper>
       <Name>{upperCaseName(name)}</Name>

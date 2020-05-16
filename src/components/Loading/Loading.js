@@ -13,6 +13,6 @@ const Image = styled.div`
   background-size: contain;
 `;
 
-export default function Loading({ image }) {
-  return <Image size={400} />;
+export default function Loading({ size }) {
+  return <Image size={size} />;
 }
