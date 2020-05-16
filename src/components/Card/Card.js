@@ -1,42 +1,57 @@
 import React from "react";
-import styled from "styled-components";
-import { object, string, func } from "prop-types";
+import styled from "styled-components/macro";
+import { object, string, func, number } from "prop-types";
 import upperCaseName from "../../utils/upperCaseName";
+import Loading from "../Loading";
+import useImageStatus from "../../utils/useImageStatus";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: ${({ theme }) => theme?.colors?.blue};
+  padding: 10px;
+  min-width: 25%;
+  margin: 20px;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
   padding: 10px 5px;
   border: 2px solid;
-  font-size: 16px;
+  background-color: ${({ theme, bgColor }) => theme?.colors?.[bgColor]};
 `;
 
-const ImageWrapper = styled.div`
-  margin: auto;
+const Image = styled.div`
+  max-width: 100%;
+  width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
   margin-bottom: 10px;
-  width: 60%;
-  border: 3px solid black;
-  padding: 10px;
+  background-image: url(${({ image }) => image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
-const Img = styled.img`
-  width: 100%;
-`;
+const Name = styled.h2``;
 
-export default function Card({ breed, onClick, message }) {
+export default function Card({ breed, onClick, message, imageSize, color }) {
   const { name, image } = breed;
+  const loaded = useImageStatus(image);
+  if (loaded === "loading") return <Loading size={400} />;
   return (
     <Wrapper>
-      <h2>{upperCaseName(name)}</h2>
-      <ImageWrapper>
-        <Img src={image} alt={name} />
-      </ImageWrapper>
-      <Button type="button" onClick={() => onClick({ name, image })}>
+      <Name>{upperCaseName(name)}</Name>
+      <Image image={image} size={imageSize} />
+      <Button
+        type="button"
+        onClick={() => onClick({ name, image })}
+        bgColor={color}
+      >
         {message}
       </Button>
     </Wrapper>
@@ -47,4 +62,9 @@ Card.propTypes = {
   breed: object.isRequired,
   onClick: func.isRequired,
   message: string.isRequired,
+  imageSize: number,
+};
+
+Card.defaultProps = {
+  imageSize: 300,
 };

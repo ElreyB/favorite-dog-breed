@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 25px;
-  background-color: dodgerblue;
-  margin-bottom: 10px;
+  background-color: ${({ theme }) => theme?.colors?.blue};
+  margin-bottom: 50px;
 `;
 
 const Label = styled.label`
@@ -32,6 +32,7 @@ const Button = styled.button`
   padding: 10px 5px;
   border: 2px solid;
   font-size: 16px;
+  background-color: ${({ theme }) => theme?.colors?.green};
 `;
 
 export default function Search({ query, onChange, breeds, randomBreed }) {

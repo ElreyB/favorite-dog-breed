@@ -5,20 +5,20 @@ import Card from "../Card";
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
 `;
 
 export default function Favorites({ favBreeds, onClick }) {
   return (
     <Wrapper>
-      {favBreeds.map((breed, index) => (
+      {favBreeds?.map((breed, index) => (
         <Card
           key={index}
           breed={breed}
           message="Remove breed"
           onClick={onClick}
-          inList
+          imageSize={150}
+          color="red"
         />
       ))}
     </Wrapper>
