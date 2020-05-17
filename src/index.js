@@ -4,12 +4,12 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ThemeProvider } from "styled-components/macro";
-import { theme, GlobalStyle } from "./styles";
+import { theme, GlobalStyles } from "./styles";
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyles />
       <App />
     </ThemeProvider>
   </React.StrictMode>,

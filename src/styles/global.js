@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components/macro";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
