@@ -24,7 +24,7 @@ Button.propTypes = {
   type: string,
 };
 
-Button.default = {
+Button.defaultProps = {
   bgColor: "none",
   type: "button",
 };
